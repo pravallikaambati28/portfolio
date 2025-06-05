@@ -1,0 +1,304 @@
+:root {
+  --bg: #f9f9f9;
+  --text: #222;
+  --primary: #0077ff;
+  --nav-bg: rgba(255 255 255 / 0.95);
+  --nav-shadow: 0 4px 15px rgba(0, 119, 255, 0.2);
+  --footer-bg: #f0f0f0;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: var(--nav-bg);
+  box-shadow: var(--nav-shadow);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--primary);
+}
+
+/* Dark Mode Toggle */
+#darkModeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  color: var(--primary);
+}
+
+/* Main content */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--text);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --bg: #121212;
+  --text: #e4e4e4;
+  --primary: #90caf9;
+  --nav-bg: rgba(18, 18, 18, 0.95);
+  --nav-shadow: 0 4px 15px rgba(144, 202, 249, 0.3);
+  --footer-bg: #1e1e1e;
+}
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeInDown 0.8s ease-in-out;
+}
+
+.project-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease both;
+}
+
+body.dark-mode .project-card {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 119, 255, 0.2);
+}
+
+.project-card h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+  color: #0047aa;
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.contact-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 2rem;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+body.dark-mode .contact-card {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 119, 255, 0.2);
+}
+
+.contact-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.contact-card a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-sub {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Simple Animations */
+.animate-slide-up {
+  animation: slideUp 0.6s ease both;
+}
+
+.animate-fade {
+  animation: fadeIn 0.8s ease both;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between logo+links and dark mode button */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.logo-circle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 150px;
+  height: 150px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 9999;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.logo-circle:hover {
+  transform: scale(1.1);
+}
+
+.logo-circle img {
+  width: 150%;
+  height: 150%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* If using text initials instead of image */
+.logo-circle span {
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  user-select: none;
+}
+
+/* Dark mode support */
+body.dark-mode .logo-circle {
+  background-color: #2a5ddb; /* slightly darker or adjust as you want */
+  box-shadow: 0 4px 12px rgba(255,255,255,0.15);
+}
